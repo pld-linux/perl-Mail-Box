@@ -1,19 +1,19 @@
 #
 # Conditional build:
 %bcond_with	tests	# perform "make test"
-#
+
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Mail
 %define	pnam	Box
 Summary:	Mail::Box - manage a mailbox, a folder with messages
 Summary(pl):	Mail::Box - zarz±dzanie skrzynk±, folderem z wiadomo¶ciami
 Name:		perl-Mail-Box
-Version:	2.051
+Version:	2.053
 Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	969e69195b070a074e7b20ade87ca279
+# Source0-md5:	1423606da76861764641211c7bed1dd4
 BuildRequires:	perl-devel >= 5.6
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
