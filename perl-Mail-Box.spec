@@ -3,8 +3,8 @@
 %bcond_with	tests	# perform "make test"
 
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Mail
-%define	pnam	Box
+%define		pdir	Mail
+%define		pnam	Box
 Summary:	Mail::Box - manage a mailbox, a folder with messages
 Summary(pl):	Mail::Box - zarz±dzanie skrzynk±, folderem z wiadomo¶ciami
 Name:		perl-Mail-Box
