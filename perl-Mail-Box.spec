@@ -6,7 +6,7 @@
 %define	pdir	Mail
 %define	pnam	Box
 Summary:	Mail::Box - manage a mailbox, a folder with messages
-#Summary(pl):	
+Summary(pl):	Mail::Box - zarz±dzanie skrzynk±, folderem z wiadomo¶ciami
 Name:		perl-Mail-Box
 Version:	2.043
 Release:	1
@@ -39,8 +39,10 @@ The Mail::Box folder is a modern mail-folder manager -- at least at
 the moment of this writing ;)  It is written to replace Mail::Folder,
 although it interface is different.
 
-# %description -l pl
-# TODO
+%description -l pl
+Folder Mail::Box to wspó³czesny zarz±dca folderów pocztowych -
+przynajmniej w chwili pisania ;). Jest pisany, aby zast±piæ
+Mail::Folder, aczkolwiek interfejs jest inny.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
