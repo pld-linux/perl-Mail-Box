@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _with_tests - perform "make test"
+%bcond_with	tests	# perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Mail
@@ -8,27 +8,29 @@
 Summary:	Mail::Box - manage a mailbox, a folder with messages
 Summary(pl):	Mail::Box - zarz±dzanie skrzynk±, folderem z wiadomo¶ciami
 Name:		perl-Mail-Box
-Version:	2.043
+Version:	2.051
 Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	7e7c664f13ae469164955ce67184cc6b
+# Source0-md5:	969e69195b070a074e7b20ade87ca279
 BuildRequires:	perl-devel >= 5.6
 BuildRequires:	rpm-perlprov >= 4.1-13
-%if %{?_with_tests:1}0
+%if %{with tests}
 BuildRequires:	perl(Encode) >= 1.86
-BuildRequires:	perl(Mail::Transport::Dbx)
-BuildRequires:	perl(Object::Realize::Later) >= 0.12
+BuildRequires:	perl-Object-Realize-Later >= 0.12
 BuildRequires:	perl(Scalar::Util) >= 1.07
 BuildRequires:	perl-HTML-Format
 BuildRequires:	perl-MIME-Types >= 1.004
 BuildRequires:	perl-Mail-SpamAssassin
 BuildRequires:	perl-Test-Simple >= 0.47
 BuildRequires:	perl-Text-Autoformat
+# not in PLD yet
+#BuildRequires:	perl-Mail-Transport-Dbx >= 0.04
+#BuildRequires:	perl-User-Identity
 %endif
 # not found by perl.req
-Requires:	perl(Object::Realize::Later) >= 0.12
+Requires:	perl-Object-Realize-Later >= 0.12
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -50,10 +52,11 @@ Mail::Folder, aczkolwiek interfejs jest inny.
 
 %build
 %{__perl} Makefile.PL \
-	INSTALLDIRS=vendor
+	INSTALLDIRS=vendor \
+	< /dev/null
 %{__make}
 
-%{?_with_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
