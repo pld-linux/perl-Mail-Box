@@ -44,6 +44,7 @@ although it interface is different.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
+%{__perl} -pi -e 's/^use 5.007003;$/use 5.007_003;/' Mail/Message/Field/Attribute.pm
 
 %build
 %{__perl} Makefile.PL \
