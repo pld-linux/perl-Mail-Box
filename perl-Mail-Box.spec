@@ -6,7 +6,7 @@
 %define		pdir	Mail
 %define		pnam	Box
 Summary:	Mail::Box - manage a mailbox, a folder with messages
-Summary(pl.UTF-8):   Mail::Box - zarządzanie skrzynką, folderem z wiadomościami
+Summary(pl.UTF-8):	Mail::Box - zarządzanie skrzynką, folderem z wiadomościami
 Name:		perl-Mail-Box
 Version:	2.059
 Release:	1
