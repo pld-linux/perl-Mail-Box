@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_with	tests	# perform "make test"
-
+#
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Mail
 %define		pnam	Box
@@ -12,8 +12,9 @@ Version:	2.079
 Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Mail/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	b6ccfc8c4dd3bd5161bf351d5d258105
+URL:		http://search.cpan.org/dist/Mail-Box/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
