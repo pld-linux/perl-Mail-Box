@@ -8,12 +8,12 @@
 Summary:	Mail::Box - manage a mailbox, a folder with messages
 Summary(pl.UTF-8):	Mail::Box - zarządzanie skrzynką, folderem z wiadomościami
 Name:		perl-Mail-Box
-Version:	2.059
+Version:	2.079
 Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	0071f4d9b90bc5009a4815de4186f486
+# Source0-md5:	b6ccfc8c4dd3bd5161bf351d5d258105
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
