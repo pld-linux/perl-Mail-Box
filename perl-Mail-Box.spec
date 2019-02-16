@@ -8,30 +8,34 @@
 Summary:	Mail::Box - manage a mailbox, a folder with messages
 Summary(pl.UTF-8):	Mail::Box - zarządzanie skrzynką, folderem z wiadomościami
 Name:		perl-Mail-Box
-Version:	2.101
+Version:	3.006
 Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Mail/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	a84461ad25d3f099bd043d3d73815844
+# Source0-md5:	e9d277d86e3f557c9feb69781cd9eee5
 URL:		http://search.cpan.org/dist/Mail-Box/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
+BuildRequires:	perl(Carp)
+BuildRequires:	perl(Cwd)
+BuildRequires:	perl(Date::Parse)
+BuildRequires:	perl-Devel-GlobalDestruction >= 0.09a3
 BuildRequires:	perl(Encode) >= 1.86
-BuildRequires:	perl-Object-Realize-Later >= 0.12
+BuildRequires:	perl-File-Remove >= 0.2
+BuildRequires:	perl(IO::Scalar)
+BuildRequires:	perl-Object-Realize-Later >= 0.19
 BuildRequires:	perl(Scalar::Util) >= 1.07
 BuildRequires:	perl-HTML-Format
 BuildRequires:	perl-MIME-Types >= 1.004
 BuildRequires:	perl-Mail-SpamAssassin
 BuildRequires:	perl-Test-Simple >= 0.47
 BuildRequires:	perl-Text-Autoformat
-# not in PLD yet
-#BuildRequires:	perl-Mail-Transport-Dbx >= 0.04
-#BuildRequires:	perl-User-Identity
+BuildRequires:	perl-User-Identity
 %endif
-# not found by perl.req
-Requires:	perl-Object-Realize-Later >= 0.12
+ not found by perl.req
+Requires:	perl-Object-Realize-Later >= 0.19
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -49,7 +53,6 @@ Mail::Folder, aczkolwiek interfejs jest inny.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-%{__perl} -pi -e 's/^use 5.007003;$/use 5.007_003;/' Mail/Message/Field/Attribute.pm
 
 %build
 %{__perl} Makefile.PL \
@@ -74,7 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog INSTALL README* TODO*
+%doc ChangeLog README*
 %attr(755,root,root) %{_examplesdir}/%{name}-%{version}
 %{perl_vendorlib}/Mail/*
 %{_mandir}/man3/*
