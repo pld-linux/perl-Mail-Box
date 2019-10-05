@@ -34,7 +34,7 @@ BuildRequires:	perl-Test-Simple >= 0.47
 BuildRequires:	perl-Text-Autoformat
 BuildRequires:	perl-User-Identity
 %endif
- not found by perl.req
+# not found by perl.req
 Requires:	perl-Object-Realize-Later >= 0.19
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
