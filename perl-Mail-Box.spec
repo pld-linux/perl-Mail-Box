@@ -18,21 +18,20 @@ URL:		http://search.cpan.org/dist/Mail-Box/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl(Carp)
-BuildRequires:	perl(Cwd)
-BuildRequires:	perl(Date::Parse)
-BuildRequires:	perl-Devel-GlobalDestruction >= 0.09a3
 BuildRequires:	perl(Encode) >= 1.86
-BuildRequires:	perl-File-Remove >= 0.2
-BuildRequires:	perl(IO::Scalar)
-BuildRequires:	perl-Object-Realize-Later >= 0.19
 BuildRequires:	perl(Scalar::Util) >= 1.07
+BuildRequires:	perl-Devel-GlobalDestruction >= 0.09a3
+BuildRequires:	perl-File-Remove >= 0.2
 BuildRequires:	perl-HTML-Format
+BuildRequires:	perl-IO-stringy
 BuildRequires:	perl-MIME-Types >= 1.004
 BuildRequires:	perl-Mail-SpamAssassin
+BuildRequires:	perl-Object-Realize-Later >= 0.19
 BuildRequires:	perl-Test-Simple >= 0.47
 BuildRequires:	perl-Text-Autoformat
+BuildRequires:	perl-TimeDate
 BuildRequires:	perl-User-Identity
+BuildRequires:	perl-base
 %endif
 # not found by perl.req
 Requires:	perl-Object-Realize-Later >= 0.19
@@ -43,7 +42,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The Mail::Box folder is a modern mail-folder manager -- at least at
-the moment of this writing ;)  It is written to replace Mail::Folder,
+the moment of this writing ;) It is written to replace Mail::Folder,
 although it interface is different.
 
 %description -l pl.UTF-8
