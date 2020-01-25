@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_with	tests	# perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	Mail
 %define		pnam	Box
 Summary:	Mail::Box - manage a mailbox, a folder with messages
